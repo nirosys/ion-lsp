@@ -1,0 +1,19 @@
+==================
+Basic Struct Test
+==================
+{}
+
+---
+(source_file (struct ))
+
+==================
+Struct Test
+==================
+{
+  'foo': 'bar'
+}
+
+---
+(source_file (struct
+   (field_value_pair (inline_symbol) (inline_symbol))
+))

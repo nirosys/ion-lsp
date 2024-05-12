@@ -7,13 +7,29 @@ Basic Struct Test
 (source_file (struct ))
 
 ==================
-Struct Test
+Struct Test: Comma to Finish Field Pairs.
 ==================
 {
-  'foo': 'bar'
+  foo: "bar",
+  bar: "foo",
 }
 
 ---
 (source_file (struct
-   (field_value_pair (inline_symbol) (inline_symbol))
+   (field_value_pair (inline_symbol) (string ))
+   (field_value_pair (inline_symbol) (string ))
+))
+
+==================
+Struct Test: No Comma to Finish Field Pairs.
+==================
+{
+  foo: "bar",
+  bar: "foo"
+}
+
+---
+(source_file (struct
+   (field_value_pair (inline_symbol) (string ))
+   (field_value_pair (inline_symbol) (string ))
 ))

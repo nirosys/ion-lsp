@@ -1,0 +1,23 @@
+==================
+Identifier
+==================
+foo
+
+---
+(source_file (inline_symbol ))
+
+==================
+Quoted Symbol
+==================
+'hello world'
+
+---
+(source_file (inline_symbol ))
+
+==================
+Symbol Address
+==================
+$12
+
+---
+(source_file (symbol_address))

@@ -1,10 +1,10 @@
 [
   {
-    "type": "field_value_pair",
-    "named": true,
+    "type": "annotation",
+    "named": false,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
@@ -12,18 +12,65 @@
           "named": true
         },
         {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "struct",
-          "named": true
-        },
-        {
           "type": "symbol_address",
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "annotations",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "field_value_pair",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "inline_symbol",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol_address",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "annotations",
+            "named": true
+          },
+          {
+            "type": "inline_symbol",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct",
+            "named": true
+          },
+          {
+            "type": "symbol_address",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -39,6 +86,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "annotations",
+          "named": true
+        },
         {
           "type": "inline_symbol",
           "named": true
@@ -96,7 +147,23 @@
     "named": false
   },
   {
+    "type": ",",
+    "named": false
+  },
+  {
     "type": ":",
+    "named": false
+  },
+  {
+    "type": "::",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
     "named": false
   },
   {

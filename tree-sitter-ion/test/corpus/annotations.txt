@@ -1,0 +1,15 @@
+==================
+Single Annotation
+==================
+asdf::foo
+
+---
+(source_file (annotations (inline_symbol)) (inline_symbol) )
+
+==================
+Multiple Annotations
+==================
+asdf::fsda::foo
+
+---
+(source_file (annotations (inline_symbol) (inline_symbol)) (inline_symbol) )

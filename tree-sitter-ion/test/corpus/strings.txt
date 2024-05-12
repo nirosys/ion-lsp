@@ -1,0 +1,19 @@
+==================
+Basic String
+==================
+"Hello"
+
+---
+(source_file (string ))
+
+==================
+Multi-String
+==================
+"Hello"
+"World"
+
+---
+(source_file
+   (string )
+   (string )
+)

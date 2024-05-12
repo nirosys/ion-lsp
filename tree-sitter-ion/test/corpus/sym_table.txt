@@ -1,0 +1,13 @@
+==================
+Identifier
+==================
+$ion_1_0
+$ion_symbol_table::{
+   symbols: ["foo"],
+}
+---
+(source_file
+   (symbol)
+   (annotations (symbol))
+   (struct (field_value_pair (symbol) (list (string))))
+)

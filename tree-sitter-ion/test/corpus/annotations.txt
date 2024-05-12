@@ -1,15 +1,23 @@
 ==================
-Single Annotation
+Single Annotation: On String
 ==================
-asdf::foo
+asdf::"Hello World"
 
 ---
-(source_file (annotations (inline_symbol)) (inline_symbol) )
+(source_file (annotations (symbol)) (string ) )
 
 ==================
-Multiple Annotations
+Multiple Annotations: On String
 ==================
-asdf::fsda::foo
+asdf::fsda::"Hello World"
 
 ---
-(source_file (annotations (inline_symbol) (inline_symbol)) (inline_symbol) )
+(source_file (annotations (symbol) (symbol)) (string ) )
+
+==================
+Multiple Annotations: On Symbol
+==================
+asdf::fsda::'foo'
+
+---
+(source_file (annotations (symbol) (symbol)) (symbol ) )

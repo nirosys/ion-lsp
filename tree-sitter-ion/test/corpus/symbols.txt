@@ -2,9 +2,13 @@
 Identifier
 ==================
 foo
+$ion_1_0
 
 ---
-(source_file (inline_symbol ))
+(source_file
+   (symbol )
+   (symbol )
+)
 
 ==================
 Quoted Symbol
@@ -12,7 +16,7 @@ Quoted Symbol
 'hello world'
 
 ---
-(source_file (inline_symbol ))
+(source_file (symbol))
 
 ==================
 Symbol Address
@@ -20,4 +24,4 @@ Symbol Address
 $12
 
 ---
-(source_file (symbol_address))
+(source_file (symbol))

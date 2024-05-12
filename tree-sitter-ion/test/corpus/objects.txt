@@ -16,8 +16,8 @@ Struct Test: Comma to Finish Field Pairs.
 
 ---
 (source_file (struct
-   (field_value_pair (inline_symbol) (string ))
-   (field_value_pair (inline_symbol) (string ))
+   (field_value_pair (symbol) (string ))
+   (field_value_pair (symbol) (string ))
 ))
 
 ==================
@@ -30,6 +30,6 @@ Struct Test: No Comma to Finish Field Pairs.
 
 ---
 (source_file (struct
-   (field_value_pair (inline_symbol) (string ))
-   (field_value_pair (inline_symbol) (string ))
+   (field_value_pair (symbol) (string ))
+   (field_value_pair (symbol) (string ))
 ))

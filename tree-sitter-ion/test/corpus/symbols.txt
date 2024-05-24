@@ -43,6 +43,8 @@ $ion_symbol_table::{
 
 ---
 (source_file (symbol_table
+   (symbol )
+   (symbol )
    (list (string))
 ))
 
@@ -55,5 +57,7 @@ Symbol Table: Quoted
 
 ---
 (source_file (symbol_table
+    (symbol )
+    (symbol )
     (list (string))
 ))

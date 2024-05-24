@@ -12,7 +12,7 @@ function joinedRepeat(rule, sep) {
 
 function quotedOrIdentifier(rule) {
   return choice(
-    seq('\'', rule, '\''),
+    token(seq('\'', rule, '\'')),
     rule,
   );
 }
@@ -25,6 +25,7 @@ module.exports = grammar({
         $.version_marker,
         $.symbol_table,
         $._value,
+        $.comment,
       )),
 
       _value: $ => choice(
@@ -33,16 +34,31 @@ module.exports = grammar({
         $.symbol,
         $.list,
         $.string,
+        $.integer,
+        $.keyword,
       ),
 
+     keyword: $ => choice("null", "null.int", "true", "false"),
+     operator: $ => choice("{", "}", "(", ")", "[", "]", "::", ":", ","),
      version_marker: $ => quotedOrIdentifier(seq(
        '$ion_', /[0-9]+/, '_', /[0-9]+/
      )),
 
+     comment: $ => choice(
+       seq("//", /[^\n]*/),
+       seq(
+         '/*',
+         /[^*]*\*+([^/*][^*]*\*+)*/,
+        optional('/')
+       )
+     ),
+
+     integer: $ => /[^0-9$][0-9]+[^0-9e]/,
+
      symbol_table: $ => seq(
-       quotedOrIdentifier('$ion_symbol_table'),
+       alias(quotedOrIdentifier('$ion_symbol_table'), $.symbol),
        '::',
-       field('symbols', $._symbol_table_struct),
+       $._symbol_table_struct,
      ),
 
       struct: $ => seq(
@@ -69,7 +85,7 @@ module.exports = grammar({
        '}',
      ),
      _symbol_table_symbols: $ => seq(
-       'symbols', ':', $.list,
+       alias('symbols', $.symbol), ':', field("symbols", $.list),
      ),
 
 

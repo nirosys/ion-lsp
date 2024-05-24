@@ -1,14 +1,16 @@
 ==================
-Identifier
+Symbol Table: Identifier
 ==================
 $ion_1_0
 $ion_symbol_table::{
-   symbols: ["foo"],
+   symbols: ["foo"]
 }
 ---
 (source_file
    (version_marker )
    (symbol_table
+      (symbol )
+      (symbol )
       (list
          (string )
       )

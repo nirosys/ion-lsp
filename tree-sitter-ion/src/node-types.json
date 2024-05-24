@@ -1,5 +1,10 @@
 [
   {
+    "type": "comment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "field_value_pair",
     "named": true,
     "fields": {
@@ -22,6 +27,14 @@
         "required": true,
         "types": [
           {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "keyword",
+            "named": true
+          },
+          {
             "type": "list",
             "named": true
           },
@@ -42,6 +55,11 @@
     }
   },
   {
+    "type": "keyword",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "list",
     "named": true,
     "fields": {},
@@ -49,6 +67,14 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "keyword",
+          "named": true
+        },
         {
           "type": "list",
           "named": true
@@ -76,6 +102,18 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "keyword",
+          "named": true
+        },
         {
           "type": "list",
           "named": true
@@ -133,31 +171,25 @@
     "named": true,
     "fields": {
       "symbols": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
-            "type": ":",
-            "named": false
-          },
-          {
             "type": "list",
             "named": true
-          },
-          {
-            "type": "symbols",
-            "named": false
-          },
-          {
-            "type": "{",
-            "named": false
-          },
-          {
-            "type": "}",
-            "named": false
           }
         ]
       }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "symbol",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -178,15 +210,31 @@
     "named": false
   },
   {
-    "type": "$ion_symbol_table",
-    "named": false
-  },
-  {
     "type": "'",
     "named": false
   },
   {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
     "type": ",",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": "/*",
+    "named": false
+  },
+  {
+    "type": "//",
     "named": false
   },
   {
@@ -210,7 +258,23 @@
     "named": false
   },
   {
-    "type": "symbols",
+    "type": "false",
+    "named": false
+  },
+  {
+    "type": "integer",
+    "named": true
+  },
+  {
+    "type": "null",
+    "named": false
+  },
+  {
+    "type": "null.int",
+    "named": false
+  },
+  {
+    "type": "true",
     "named": false
   },
   {

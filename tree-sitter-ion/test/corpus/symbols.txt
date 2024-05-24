@@ -1,4 +1,12 @@
 ==================
+Version Marker
+==================
+$ion_1_0
+
+---
+(source_file (version_marker ))
+
+==================
 Identifier
 ==================
 foo
@@ -7,7 +15,7 @@ $ion_1_0
 ---
 (source_file
    (symbol )
-   (symbol )
+   (version_marker )
 )
 
 ==================
@@ -25,3 +33,27 @@ $12
 
 ---
 (source_file (symbol))
+
+==================
+Symbol Table
+==================
+$ion_symbol_table::{
+   symbols:["a"]
+}
+
+---
+(source_file (symbol_table
+   (list (string))
+))
+
+==================
+Symbol Table: Quoted
+==================
+'$ion_symbol_table'::{
+   symbols:["a"]
+}
+
+---
+(source_file (symbol_table
+    (list (string))
+))

@@ -7,7 +7,7 @@
 //! let code = r#"
 //! "#;
 //! let mut parser = tree_sitter::Parser::new();
-//! parser.set_language(&tree_sitter_Ion::language()).expect("Error loading Ion grammar");
+//! parser.set_language(&tree_sitter_ion::language()).expect("Error loading Ion grammar");
 //! let tree = parser.parse(code, None).unwrap();
 //! assert!(!tree.root_node().has_error());
 //! ```

@@ -10,20 +10,40 @@ function joinedRepeat(rule, sep) {
   return seq(rule, repeat(seq(sep, rule)));
 }
 
+function quotedOrIdentifier(rule) {
+  return choice(
+    seq('\'', rule, '\''),
+    rule,
+  );
+}
+
 module.exports = grammar({
    name: 'Ion',
 
    rules: {
-      source_file: $ => repeat($._value),
-      keyword: $ => token(/true|false|null.null|null.bool|null.string|null.decimal|null.float|null.int|null.timestamp/),
-
-
-      _value: $ => seq(optional($.annotations), choice(
-         $.struct,
-         $.list,
-         $.string,
-         $.symbol,
+      source_file: $ => repeat(choice(
+        $.version_marker,
+        $.symbol_table,
+        $._value,
       )),
+
+      _value: $ => choice(
+        $.struct,
+        $.string,
+        $.symbol,
+        $.list,
+        $.string,
+      ),
+
+     version_marker: $ => quotedOrIdentifier(seq(
+       '$ion_', /[0-9]+/, '_', /[0-9]+/
+     )),
+
+     symbol_table: $ => seq(
+       quotedOrIdentifier('$ion_symbol_table'),
+       '::',
+       field('symbols', $._symbol_table_struct),
+     ),
 
       struct: $ => seq(
          '{',
@@ -42,6 +62,15 @@ module.exports = grammar({
          ':',
          field('value', $._value),
       ),
+
+     _symbol_table_struct: $ => seq(
+       '{',
+       $._symbol_table_symbols,
+       '}',
+     ),
+     _symbol_table_symbols: $ => seq(
+       'symbols', ':', $.list,
+     ),
 
 
       string: $ => seq('"', /[^"]*/, '"'),

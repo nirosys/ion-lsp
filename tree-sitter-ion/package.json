@@ -47,7 +47,9 @@
   "tree-sitter": [
     {
       "scope": "source.ion",
-      "injection-regex": "^ion$"
+      "injection-regex": "^ion$",
+      "file-types": ["ion"],
+      "highlights": "queries/highlights.scm"
     }
   ]
 }

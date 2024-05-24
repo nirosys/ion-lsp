@@ -7,7 +7,10 @@ $ion_symbol_table::{
 }
 ---
 (source_file
-   (symbol)
-   (annotations (symbol))
-   (struct (field_value_pair (symbol) (list (string))))
+   (version_marker )
+   (symbol_table
+      (list
+         (string )
+      )
+   )
 )

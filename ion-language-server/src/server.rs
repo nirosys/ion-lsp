@@ -1,7 +1,7 @@
 use std::sync::Arc;
 
 use serde_json::{json, Value};
-use tower_lsp::jsonrpc::Result;
+use tower_lsp::jsonrpc::{Error, Result};
 use tower_lsp::lsp_types::*;
 use tower_lsp::{Client, LanguageServer};
 
@@ -98,8 +98,8 @@ impl LanguageServer for IonLspService {
     }
 
     async fn semantic_tokens_full(&self, _: SemanticTokensParams) -> Result<Option<SemanticTokensResult>> {
-        let ret = handlers::semantic_tokens_full().await;
-        ret.into()
+        handlers::semantic_tokens_full().await
+            .map_err(|e| Error::new(tower_lsp::jsonrpc::ErrorCode::InternalError))
         // let ret = SemanticTokensResult::Tokens(
         //     SemanticTokens {
         //         result_id: None,

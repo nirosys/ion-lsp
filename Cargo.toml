@@ -2,5 +2,5 @@
 resolver = "2"
 members = [
    "ion-language-server",
-   # "ion-tree-sitter",
+   "tree-sitter-ion"
 ]

@@ -1,20 +1,5 @@
 [
   {
-    "type": "annotations",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "symbol",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "field_value_pair",
     "named": true,
     "fields": {
@@ -33,13 +18,9 @@
         ]
       },
       "value": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
-          {
-            "type": "annotations",
-            "named": true
-          },
           {
             "type": "list",
             "named": true
@@ -69,10 +50,6 @@
       "required": false,
       "types": [
         {
-          "type": "annotations",
-          "named": true
-        },
-        {
           "type": "list",
           "named": true
         },
@@ -100,10 +77,6 @@
       "required": false,
       "types": [
         {
-          "type": "annotations",
-          "named": true
-        },
-        {
           "type": "list",
           "named": true
         },
@@ -117,6 +90,14 @@
         },
         {
           "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "symbol_table",
+          "named": true
+        },
+        {
+          "type": "version_marker",
           "named": true
         }
       ]
@@ -148,11 +129,56 @@
     "fields": {}
   },
   {
+    "type": "symbol_table",
+    "named": true,
+    "fields": {
+      "symbols": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": ":",
+            "named": false
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "symbols",
+            "named": false
+          },
+          {
+            "type": "{",
+            "named": false
+          },
+          {
+            "type": "}",
+            "named": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "version_marker",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "\"",
     "named": false
   },
   {
     "type": "$",
+    "named": false
+  },
+  {
+    "type": "$ion_",
+    "named": false
+  },
+  {
+    "type": "$ion_symbol_table",
     "named": false
   },
   {
@@ -177,6 +203,14 @@
   },
   {
     "type": "]",
+    "named": false
+  },
+  {
+    "type": "_",
+    "named": false
+  },
+  {
+    "type": "symbols",
     "named": false
   },
   {
